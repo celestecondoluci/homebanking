@@ -204,7 +204,7 @@
                                 <select v-model="tipoCuenta">
                                     <option v-for="account in accountsOrdenadas">{{account.type}}</option>
                                 </select>
-                                {{tipoCuenta}}
+
                                 
                                <div> ¿Esta seguro de crear otra cuenta?</div>
                             </div>
@@ -224,7 +224,11 @@
                             <img src="./img/metodo-de-pago.png">
                             <h4>Ultimos Movimientos</h4>
                         </div>
-                        <table class="table table-hover table-striped" v-for="transaction in transactions.slice(0,4)">
+                        <h5 v-if="transactions.length === 0">No tienes ningun movimiento aun.
+                            <button type="button" class="solicitar btn btn-outline-secondary"><a
+                                href="/web/transfers.html">Realiza una transferencia</a></button>
+                            </h5>
+                        <table class="table table-hover table-striped" v-for="transaction in transactions.slice(0,4)"> 
                             <tbody>
                             <tr>
                                 <td>{{transaction.description}} ${{transaction.amount}}</td>
@@ -238,8 +242,11 @@
                             <img src="./img/credit-cards (1).png">
                             <h4>Tus Tarjetas</h4>
                         </div>
-                        <p v-if="cards.length === 0">Aun no tienes tarjetas para mostrar.Solicite su tarjeta de
-                            debito o credito</p>
+                        <h4 v-if="cards.length === 0">Aun no tienes tarjetas para mostrar.Solicite su tarjeta de
+                            debito o credito
+                            <button type="button" class="solicitar btn btn-outline-secondary"><a
+                                href="/web/create-card.html">Solicitar tu tarjerta</a></button>
+                            </h4>
                         <table class="table table-striped" v-for="card in cards">
                             <tbody>
                                 <tr>
@@ -267,8 +274,8 @@
                         </button>
                     </p>
                     <div class="collapse" id="collapseExamplePrestamos">
-                        <p v-if="loans.length == 0">No te pierdas la oferta que tenemos para vos, hasta
-                            500.000 en 60 cuotas. Solicita tu prestamo <img src="./img/proximo.png"> </p>
+                        <h4 v-if="loans.length == 0">No te pierdas la oferta que tenemos para vos, hasta
+                            500.000 en 60 cuotas. Solicita tu prestamo <img src="./img/proximo.png"> </h4>
                         <div class="card card-body" v-else>
                             <h4>Mis prestamos</h4>
                             <table class="table" v-for="loan in loans">
@@ -323,7 +330,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="button" class="solicitarprestamo btn btn-outline-success"><a
+                                <button type="button" class="solicitarprestamo btn btn-outline-secondary"><a
                                     href="/web/loan-application.html">Solicitar tu prestamo</a></button>
                             </div>
 

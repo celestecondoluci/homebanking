@@ -277,7 +277,7 @@ main {
 }
 
 .cuenta-container {
-    width: 35%;
+    width: 34%;
 }
 
 .saldo-cuenta {
@@ -318,7 +318,7 @@ footer {
 }
 button a{
     text-decoration: none;
-    color: #167b22
+    color: #666;
 }
 button a:hover{
     color: white;
