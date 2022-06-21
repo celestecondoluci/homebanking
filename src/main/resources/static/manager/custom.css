@@ -1,0 +1,57 @@
+*{margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;}
+
+main{max-width: 100vw;}
+
+nav{
+    margin:1%;
+    border-bottom: lightgrey 1px solid;
+}
+
+nav a{
+    text-decoration: none;
+    gap: 2rem;
+    color: black;
+    margin-left: 1%;
+}
+a:hover{
+    color: green;
+}
+
+header{max-width: 100vw;
+    border-bottom:.5px solid black ;}
+
+input[type="name"], textarea
+{background-color:#e3ffe3 ;}
+input[type="lastname"], textarea
+{background-color:#e3ffe3 ;}
+input[type="email"], textarea
+{background-color:#e3ffe3 ;}
+
+thead{background-color:#c1fba4 ;}
+
+input[type="checkbox"]{
+    margin: 1%;
+}
+
+input[type="number"]{
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"]{
+    margin: 1%;
+}
+
+#logo{max-width: 4rem;}
+
+

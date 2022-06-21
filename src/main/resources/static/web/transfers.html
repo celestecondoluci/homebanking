@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="./styles/transfers.css">
+  <link rel="icon" href="./img/favicon.png">
+  <title>Transferencias</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="col-xs-4 col-md-8 col-lg-12">
+
+      <nav>
+        <button class="menu btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample" id="menu">
+          <img src="./img/menu.png">
+        </button>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-bodyNav">
+            <a href="http://localhost:8080/web/accounts.html">Cuentas</a>
+            <a href="http://localhost:8080/web/accounts.html">Prestamos</a>
+            <a href="http://localhost:8080/web/card.html">Tarjetas</a>
+            <a href="#">Transferencias</a>
+          </div>
+          <button type="button" class="btn btn-outline-secondary" v-on:click="CerrarSesion()">cerrar sesion</button>
+        </div>
+
+      </nav>
+      <div class="logo">
+        <img src="./img/nuevotitulo.png" alt="logo">
+      </div>
+      <button class="botonUsuario  btn btn-light btn-sm"><img src="./img/usuario.png"></button>
+      <button class="botoncontacto btn btn-outline-light btn-sm " data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/contacto.png"></button>
+      <!-- canva -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">Contacto</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h5 class="callcenter">Hola ¿En que te puedo ayudar?</h5>
+          <div id="callcenter">
+            <img src="./img/callcenter.jpg" alt="callcenter">
+          </div>
+
+          <div class="card" style="width: 22rem;">
+            <div class="card-body">
+              <img src="./img/WhatsApp.png" alt="wpp" id="wpp">
+              <h5 class="card-title">Escribinos por WhatsApp</h5>
+              <p class="card-text">+549 1223 5546</p>
+              <a href="https://wa.me/54912235546" id="link">Nuestro WhatsApp<img src="./img/flecha.png" alt="numerowpp"
+                  id="numerowpp"> </a>
+            </div>
+            <div class="card-body">
+              <img src="./img/telefono.png" alt="wpp" id="wpp">
+              <h5 class="card-title">Llamanos a nuestra linea directa</h5>
+              <p class="card-text">0-800-333-6754</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fin canva -->
+      <!-- Button trigger modal -->
+      <button type="button" class="botonpreguntas btn btn-outline-light btn-sm " data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
+        <img src="./img/pregunta.png">
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Preguntas Frecuentes</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h5> ¿Qué es Home Banking?</h5>
+              Es la forma más fácil de realizar tus operaciones, a través de Internet, de manera segura en
+              cualquier momento y desde cualquier lugar. Es un servicio gratuito, las 24 horas y los 365
+              días del año
+
+
+              <h5> ¿Es seguro operar con Home Banking?</h5>
+              Sí, operar con Home Banking es seguro. Debés contar con conexión a Internet y utilizar
+              alguno de los navegadores recomendados como Microsoft Internet Explorer 6.0 y sus versiones
+              posteriores como Microsoft Internet Explorer 8.0, Safari, Mozilla Firefox 3.0 o Google
+              Crome.
+
+              En Home Banking la información circula con sistemas de encriptación, es decir, que cualquier
+              persona y/o computadora que trate de descubrir los datos que estás intercambiando solamente
+              puede ver símbolos numéricos sin ningún significado.
+
+              Acordate de utilizar nuestro teclado virtual si ingresás desde una PC pública
+
+              <h5>¿Cuál es el teléfono y el horario del Centro de Atención al Cliente?</h5>
+              Todas las consultas sobre Home Banking podés hacerlas de lunes a viernes de 8 a 14hs. al
+              0-800-333-6754.
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="nav">
+        <div>
+          <div class="misCuentas">
+            <img src="./img/cuentas.png">
+          </div>
+          <a href="http://localhost:8080/web/accounts.html" class="links">
+            <h5>Cuentas</h5>
+          </a>
+        </div>
+        <div>
+          <div class="misTransferencias">
+            <img src="./img/transferencia.png">
+          </div>
+          <h5>Trasferencias</h5>
+        </div>
+        <div>
+          <div class="misPrestamos">
+            <img src="./img/prestamos.png">
+          </div>
+          <a href="http://localhost:8080/web/accounts.html" class="links">
+            <h5>Prestamos</h5>
+          </a>
+        </div>
+        <div>
+          <div class="misTarjetas">
+            <img src="./img/tarjeta.png">
+          </div>
+          <a href="#" class="links">
+            <h5>Tarjetas</h5>
+          </a>
+        </div>
+      </section>
+
+
+
+
+      <form>
+        <h4>¿A quien desea realizarle una transferencia?</h4>
+        <select v-model="valueSelectOptions" class="form-select form-select- mb-2" aria-label=".form-select-lg example">
+          <option disabled value="">Seleccione tipo de transferencia</option>
+          <option value="cuentaTerceros">Cuenta de terceros</option>
+          <option value="cuentaPropia">Cuenta propia</option>
+        </select>
+
+
+
+        <!-- en caso de cuenta de terceros -->
+
+        <div v-if="valueSelectOptions =='cuentaTerceros'">
+          <h5>Elija cuenta de origen</h5>
+          <select v-model="numberAccountOrigin" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option disabled value="">Seleccione una cuenta</option>
+            <option v-for="account in accounts">{{account.number}}</option>
+          </select>
+
+          <label for="text">Escriba el numero de cuenta de destino:</label>
+          <input type="text" v-model="numberAccountDestination">
+        </div>
+
+
+        <!-- en caso de cuenta propia-->
+        <div v-else-if="valueSelectOptions == 'cuentaPropia'">
+          <h5>Elija cuenta de origen</h5>
+          <select v-model="numberAccountOrigin" class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option disabled value="">Seleccione una cuenta</option>
+            <option :disabled="account.number == numberAccountDestination" v-for="account in accounts">
+              {{account.number}}</option>
+          </select>
+          <h5>Elija cuenta de destino</h5>
+          <select v-model="numberAccountDestination" class="form-select form-select-sm"
+            aria-label=".form-select-sm example">
+            <option disabled value="">Seleccione una cuenta</option>
+            <option :disabled="account.number == numberAccountOrigin" v-for="account in accounts">{{account.number}}
+            </option>
+          </select>
+        </div>
+
+
+        <label for="number">Monto a transferir:</label>
+        <input type="number" v-model="amountTransfer">
+
+        <label for="text">Descripcion:</label>
+        <input type="text" v-model="descriptionTransfer">
+      </form>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Realizar transferencia
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Confirmar transferencia</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ¿Esta seguro de realizar esta transferencia?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary" v-on:click.prevent="realizarTransferencia()">Si</button> 
+              <button type="button" class="btn btn-primary" id="liveAlertBtn"
+                v-on:click.prevent="realizarTransferencia()">Si</button> 
+              <div id="liveAlertPlaceholder"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="./script/transfers.js"></script>
+</body>
+
+</html>

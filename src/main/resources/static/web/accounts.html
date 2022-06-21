@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/accounts.css">
+    <link rel="icon" href="./img/favicon.png">
+
+    <title>Online Banking Mindhub</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <header class="d-flex justify-content-center">
+            <!-- menu/nav -->
+            <nav>
+                <button class="menu btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                    aria-controls="offcanvasExample" id="menu">
+                    <img src="./img/menu.png">
+                </button>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-bodyNav">
+                        <a href="#">Cuentas</a>
+                        <a href="#">Prestamos</a>
+                        <a href="http://localhost:8080/web/card.html">Tarjetas</a>
+                        <a href="http://localhost:8080/web/transfers.html">Transferencias</a>
+
+                        
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary" v-on:click="CerrarSesion()">cerrar
+                        sesion</button>
+                </div>
+            </nav>
+            <!-- titulo -->
+            <div class="logo">
+                <img src="./img/nuevotitulo.png" alt="logo">
+            </div>
+            <!-- botones -->
+            <button class="botonUsuario  btn btn-light btn-sm"><img src="./img/usuario.png">{{clients.nombre}}</button>
+            <button class="botoncontacto btn btn-outline-light btn-sm " data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./img/contacto.png"></button>
+            <!-- canva -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Contacto</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <h5 class="callcenter">Hola ¿En que te puedo ayudar?</h5>
+                    <div id="callcenter">
+                        <img src="./img/callcenter.jpg" alt="callcenter">
+                    </div>
+
+                    <div class="card" style="width: 22rem;">
+                        <div class="card-body">
+                            <img src="./img/WhatsApp.png" alt="wpp" id="wpp">
+                            <h5 class="card-title">Escribinos por WhatsApp</h5>
+                            <p class="card-text">+549 1223 5546</p>
+                            <a href="https://wa.me/54912235546" id="link">Nuestro WhatsApp <img src="./img/flecha.png"
+                                    alt="numerowpp" id="numerowpp"></a>
+                        </div>
+                        <div class="card-body">
+                            <img src="./img/telefono.png" alt="wpp" id="wpp">
+                            <h5 class="card-title">Llamanos a nuestra linea directa</h5>
+                            <p class="card-text">0-800-333-6754</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fin canva -->
+            <!-- Button trigger modal -->
+            <button type="button" class="botonpreguntas btn btn-outline-light btn-sm " data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                <img src="./img/pregunta.png">
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Preguntas Frecuentes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5> ¿Qué es Home Banking?</h5>
+                            Es la forma más fácil de realizar tus operaciones, a través de Internet, de manera segura en
+                            cualquier momento y desde cualquier lugar. Es un servicio gratuito, las 24 horas y los 365
+                            días del año
+
+
+                            <h5> ¿Es seguro operar con Home Banking?</h5>
+                            Sí, operar con Home Banking es seguro. Debés contar con conexión a Internet y utilizar
+                            alguno de los navegadores recomendados como Microsoft Internet Explorer 6.0 y sus versiones
+                            posteriores como Microsoft Internet Explorer 8.0, Safari, Mozilla Firefox 3.0 o Google
+                            Crome.
+
+                            En Home Banking la información circula con sistemas de encriptación, es decir, que cualquier
+                            persona y/o computadora que trate de descubrir los datos que estás intercambiando solamente
+                            puede ver símbolos numéricos sin ningún significado.
+
+                            Acordate de utilizar nuestro teclado virtual si ingresás desde una PC pública
+
+                            <h5>¿Cuál es el teléfono y el horario del Centro de Atención al Cliente?</h5>
+                            Todas las consultas sobre Home Banking podés hacerlas de lunes a viernes de 8 a 14hs. al
+                            0-800-333-6754.
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </header>
+        <div class="container-fluid d-flex flex-column justify-content-between">
+            <main>
+                <!-- el otro tipo de nav -->
+                <section class="nav d-flex lex-lg-row">
+                    <div>
+                        <div class="misCuentas">
+                            <img src="./img/cuentas.png">
+                        </div>
+                        <h5>Cuentas</h5>
+                    </div>
+                    <div>
+                        <div class="misTransferencias">
+                            <img src="./img/transferencia.png">
+                        </div>
+                        <h5>Trasferencias</h5>
+                    </div>
+                    <div>
+                        <div class="misPrestamos">
+                            <img src="./img/prestamos.png">
+                        </div>
+                        <h5>Prestamos</h5>
+                    </div>
+                    <div>
+                        <div class="misTarjetas">
+                            <img src="./img/tarjeta.png">
+                        </div>
+                        <h5>Tarjetas</h5>
+                    </div>
+                </section>
+                <!-- presentacion -->
+                <h3>Bienvenido/a a Online Banking</h3>
+                <h4>Tus cuentas</h4>
+
+                <!-- cuentas -->
+                <section class="cuentas d-flex flex-column flex-lg-row">
+                    <div class="white-container" id="cuenta1" v-for="account in accountsOrdenadas">
+                        <div class="menu-container">
+                            <h1 class="tu-cuenta">{{account.number}}</h1>
+                            <button type="button" class="btn btn-danger" v-on:click="deshabilitarCuentas(account.id)">Eliminar cuenta</button>
+                            <h5>Creacion de la cuenta</h5>
+                            <p> {{account.creationDate}}</p>
+                            <h5>Tipo de cuenta</h5>
+                            <p>{{account.type}}</p>
+                            <a class="links" v-bind:href="'http://localhost:8080/web/account.html?id='+ account.id">Ver
+                                Transacciones</a>
+                            </div>
+                        <div class="green-container">
+                            <div class="cuenta-info">
+                                <p>Saldo en tu cuenta</p>
+                                <h3 class="saldo-cuenta" id="cuenta1">${{account.balance}}</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <button type="button" class="crearCuenta  btn btn-outline-success" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" v-show="accounts.length < 3">
+                    Crear Cuenta
+                </button>
+                <!-- Modal confirmacion de cuenta-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Confirmar creacion de cuenta</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Elija tipo de cuenta:
+                                <select v-model="tipoCuenta">
+                                    <option v-for="account in accountsOrdenadas">{{account.type}}</option>
+                                </select>
+                                {{tipoCuenta}}
+                                
+                               <div> ¿Esta seguro de crear otra cuenta?</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                <button type="button" class="btn btn-primary" v-on:click="crearCuenta()">Si</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tablas -->
+                <section class="seccionTablas d-flex justify-content-center flex-column ">
+                    <!-- tabla ultimos movimientos -->
+                    <div class=" col-xs-8 col-lg-8">
+                        <div id="movimientos">
+                            <img src="./img/metodo-de-pago.png">
+                            <h4>Ultimos Movimientos</h4>
+                        </div>
+                        <table class="table table-hover table-striped" v-for="transaction in transactions.slice(0,4)">
+                            <tbody>
+                            <tr>
+                                <td>{{transaction.description}} ${{transaction.amount}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                    <!-- tabla tus tarjetas -->
+                    <div class="col-xs-8 col-lg-8">
+                        <div id="tusTarjetas">
+                            <img src="./img/credit-cards (1).png">
+                            <h4>Tus Tarjetas</h4>
+                        </div>
+                        <p v-if="cards.length === 0">Aun no tienes tarjetas para mostrar.Solicite su tarjeta de
+                            debito o credito</p>
+                        <table class="table table-striped" v-for="card in cards">
+                            <tbody>
+                                <tr>
+                                    <td v-if="card.color === 'GOLD'"><img src="./img/american-express.png"></td>
+                                    <td v-if="card.color === 'TITANIUM'"><img src="./img/visa.png"></td>
+                                    <td v-if="card.color === 'SILVER'"><img src="./img/visa.png"></td>
+                                    <td>{{card.type}} {{card.color}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- prestamos -->
+                <section class="prestamos">
+                    <p>
+                        <button class="prestamosbtn btn btn-outline-success" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExamplePrestamos" role="button" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            Prestamos
+                        </button>
+                        <button class="solicitar btn btn-outline-success" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseExampleSolicitar" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            Solicitar Prestamo
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExamplePrestamos">
+                        <p v-if="loans.length == 0">No te pierdas la oferta que tenemos para vos, hasta
+                            500.000 en 60 cuotas. Solicita tu prestamo <img src="./img/proximo.png"> </p>
+                        <div class="card card-body" v-else>
+                            <h4>Mis prestamos</h4>
+                            <table class="table" v-for="loan in loans">
+                                <thead>
+                                    <tr>
+                                        <th>Tipo de Prestamo</th>
+                                        <th>Monto</th>
+                                        <th>Cuotas</th>
+                                        <th>Interes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{loan.name}}</td>
+                                        <td>${{loan.amount}}</td>
+                                        <td>{{loan.payment}}</td>
+                                        <td>${{loan.percentage}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="collapse" id="collapseExampleSolicitar">
+                        <div class="card card-body">
+                            <h4>Solicitar prestamos</h4>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="cardprestamos">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Hipotecario</h5>
+                                            <p class="card-text">Cuotas 12,24,36,48,60</p>
+                                            <p>Monto máximo $500.000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="cardprestamos">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Personal</h5>
+                                            <p class="card-text">Cuotas 6,12,24</p>
+                                            <p>Monto máximo $100.000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="cardprestamos">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Automotriz</h5>
+                                            <p class="card-text">Cuotas 6,12,24,36</p>
+                                            <p>Monto máximo $300.000</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="solicitarprestamo btn btn-outline-success"><a
+                                    href="http://localhost:8080/web/loan-application.html">Solicitar tu prestamo</a></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <p class="text-muted">Copyright ©2022 Mindhub Brothers Bank | Todos los derechos reservados. </p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./script/accounts.js"></script>
+</body>
+
+</html>

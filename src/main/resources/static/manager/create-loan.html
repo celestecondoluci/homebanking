@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./custom.css">
+
+    <title>Crear prestamo</title>
+</head>
+<body>
+    <div id="app">
+    <header class="d-flex justify-content-center">
+        <div>
+            <img src="./iconBanco.png" alt="logo" id="logo">
+        </div>
+        <h1>Mindhub Brothers Bank</h1>
+    </header>
+    <nav>
+        <a href="http://localhost:8080/manager/manager.html">Manager</a>
+        <a href="#">Crear prestamos</a>
+    </nav>
+    <form class="d-flex justify-content-center">
+        <label for="tipo">Tipo de prestamo:</label>
+            <input type="text" name="tipo" id="tipo" v-model="tipoPrestamo">
+            {{tipoPrestamo}}
+        
+            <p>Cantidad de cuotas</p>
+        <input type="checkbox" name="cuotas" value="6" v-model="cantidadCuotas">
+        <label for="6">6</label>
+        <input type="checkbox" name="cuotas" value="12"v-model="cantidadCuotas">
+        <label for="12">12</label>
+        <input type="checkbox" name="cuotas" value="24"v-model="cantidadCuotas">
+        <label for="24">24</label>
+        <input type="checkbox" name="cuotas" value="36"v-model="cantidadCuotas">
+        <label for="36">36</label>
+        <input type="checkbox" name="cuotas" value="48"v-model="cantidadCuotas">
+        <label for="48">48</label>
+        <input type="checkbox" name="cuotas" value="60"v-model="cantidadCuotas">
+        <label for="60">60</label>
+        {{cantidadCuotas}}
+
+        <label for="monto" >Monto maximo:</label>
+        <input type="number" name="monto" id="monto"v-model="montoMaximo">
+        {{montoMaximo}}
+
+        <label for="porcentaje">Tasa de Interes:</label>
+        <input type="number" name="porcentaje" id="porcentaje" v-model="porcentajeInteres">
+        {{porcentajeInteres}}
+    </form>
+    <button type="submit" v-on:click="crearPrestamo()">Crear prestamo</button>
+</div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="./create-loan.js"></script>
+</html>
