@@ -14,7 +14,7 @@ Vue.createApp({
       }
     },
     created() {
-      axios.get('http://localhost:8080/api/clients/current')
+      axios.get('/api/clients/current')
         .then(datos => {
           this.clients = datos.data
           this.accounts = datos.data.accounts
@@ -32,7 +32,7 @@ Vue.createApp({
           this.accountsOrdenadas = this.ordenarAccounts()
           this.accountsOrdenadas = this.accountsOrdenadas.filter(account => account.disable == false)
         })
-        axios.get('http://localhost:8080/api/clients/current',
+        axios.get('/api/clients/current',
         {headers:{'accept':'application/xml'}})
         .then(response =>
         console.log(response.data))
@@ -40,7 +40,7 @@ Vue.createApp({
     methods:{
       CerrarSesion() {
         axios.post('/api/logout')
-          .then(response => window.location.href = "http://localhost:8080/web/index.html")
+          .then(response => window.location.href = "/web/index.html")
       },
       ordenarAccounts(){
         let auxiliar = this.accounts
@@ -58,7 +58,7 @@ Vue.createApp({
         this.transactions.sort((firstId, secondId) => secondId.id - firstId.id);
       },
       crearCuenta(){
-        axios.post('http://localhost:8080/api/clients/current/accounts',
+        axios.post('/api/clients/current/accounts',
         `type=${this.tipoCuenta}`,{
           headers:{'content-type':'application/x-www-form-urlencoded'}
         }
@@ -66,7 +66,7 @@ Vue.createApp({
         .then(response => window.location.reload())
       },
       deshabilitarCuentas(id){
-        axios.patch('http://localhost:8080/api/clients/current/accounts',
+        axios.patch('/api/clients/current/accounts',
             `id=${id}`,{
             headers:{'content-type':'application/x-www-form-urlencoded'}})
              .then(response => axios.patch('/api/clients/current/transactions',

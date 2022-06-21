@@ -9,7 +9,7 @@ Vue.createApp({
       }
     },
     created(){
-      axios.get('http://localhost:8080/api/clients')              ///obtener la api
+      axios.get('/api/clients')              ///obtener la api
       .then(datos =>{this.clients = datos.data //.then se usa para las promesas control de lo que pasa si funciona
         console.log(datos.data)
         this.JSonClientes = datos.data ///darle el valor 
@@ -18,7 +18,7 @@ Vue.createApp({
     }, 
     methods:{
       crearCliente(){
-        axios.post('http://localhost:8080/api/clients',{  //post para enviar datos
+        axios.post('/api/clients',{  //post para enviar datos
           firstName:this.nombreCliente, //: porque le asignas el valor a una propiedad de un objeto
           lastName:this.apellidoCliente,
           mail:this.mailCliente,

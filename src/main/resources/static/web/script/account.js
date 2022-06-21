@@ -15,7 +15,7 @@ Vue.createApp({
           // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
           let value = params.some_key; 
           console.log(value)   
-          axios.get('http://localhost:8080/api/accounts/' + value)
+          axios.get('/api/accounts/' + value)
          .then(datos => {
              this.transactions = datos.data.transactions
              console.log(this.transactions)
@@ -37,7 +37,7 @@ Vue.createApp({
         },
         CerrarSesion() {
             axios.post('/api/logout')
-              .then(response => window.location.href = "http://localhost:8080/web/index.html")
+              .then(response => window.location.href = "/web/index.html")
           }
     },
  

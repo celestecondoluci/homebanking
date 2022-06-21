@@ -10,7 +10,7 @@ Vue.createApp({
       }
     },
     created() {
-      axios.get('http://localhost:8080/api/clients/current')
+      axios.get('/api/clients/current')
         .then(datos => {
           this.card1 = datos.data.cards[0]
           this.card2 = datos.data.cards[1]
@@ -36,13 +36,13 @@ Vue.createApp({
         },
         CerrarSesion() {
           axios.post('/api/logout')
-            .then(response => window.location.href = "http://localhost:8080/web/index.html")
+            .then(response => window.location.href = "/web/index.html")
         },
         deshabilitarTarjetas(id){
           axios.patch('/api/clients/current/cards',
           `id=${id}`,{
             headers:{'content-type':'application/x-www-form-urlencoded'}})
-            .then(response => window.location.href = "http://localhost:8080/web/card.html",
+            .then(response => window.location.href = "/web/card.html",
             console.log('card deleted')
             )
         },

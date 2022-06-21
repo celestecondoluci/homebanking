@@ -18,7 +18,7 @@ Vue.createApp({
             console.log(this.passwordUsuario)
             axios.post('/api/login',`email=${this.emailUsuario}&password=${this.passwordUsuario}`,{
                 headers:{'content-type':'application/x-www-form-urlencoded'}})
-                .then(response => window.location.href="http://localhost:8080/web/accounts.html")
+                .then(response => window.location.href="/web/accounts.html")
                 // .catch(error => console.log(error.response.data)
                 // .swal("Oops!", "Algo salio mal")
                 // ) 

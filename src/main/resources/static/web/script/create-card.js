@@ -9,7 +9,7 @@ Vue.createApp({
         }
     },
     created(){
-    axios.get('http://localhost:8080/api/clients/current')
+    axios.get('/api/clients/current')
     .then(datos => {
         this.cards = datos.data.cards
         this.cardDebit = this.cards.filter(card => card.type == 'DEBIT' && card.disable == false)
@@ -20,7 +20,7 @@ Vue.createApp({
         crearTarjeta(){
             axios.post('/api/clients/current/cards',`color=${this.colorTarjeta}&type=${this.tipoTarjeta}`,{
             headers:{'content-type':'application/x-www-form-urlencoded'}})
-            .then(response => window.location.href = "http://localhost:8080/web/card.html",
+            .then(response => window.location.href = "/web/card.html",
             console.log('card created')
             )
         .catch(error => 
@@ -41,7 +41,7 @@ Vue.createApp({
         },
         CerrarSesion() {
           axios.post('/api/logout')
-            .then(response => window.location.href = "http://localhost:8080/web/index.html")
+            .then(response => window.location.href = "/web/index.html")
         },
         
     },

@@ -26,10 +26,10 @@
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-bodyNav">
-            <a href="http://localhost:8080/web/accounts.html">Cuentas</a>
-            <a href="http://localhost:8080/web/accounts.html">Prestamos</a>
+            <a href="/web/accounts.html">Cuentas</a>
+            <a href="/web/accounts.html">Prestamos</a>
             <a href="#">Tarjetas</a>
-            <a href="http://localhost:8080/web/transfers.html">Transferencias</a>
+            <a href="/web/transfers.html">Transferencias</a>
           </div>
           <button type="button" class="btn btn-outline-secondary" v-on:click="CerrarSesion()">cerrar sesion</button>
         </div>
@@ -127,7 +127,7 @@
           <div class="misCuentas">
             <img src="./img/cuentas.png">
           </div>
-          <a href="http://localhost:8080/web/accounts.html" class="links">
+          <a href="/web/accounts.html" class="links">
             <h5>Cuentas</h5>
           </a>
         </div>
@@ -141,7 +141,7 @@
           <div class="misPrestamos">
             <img src="./img/prestamos.png">
           </div>
-          <a href="http://localhost:8080/web/accounts.html" class="links">
+          <a href="/web/accounts.html" class="links">
             <h5>Prestamos</h5>
           </a>
         </div>
@@ -279,7 +279,7 @@
       </section>
 
       <button type="button" class="solicitar btn btn-outline-success" v-show="cards.length < 6"><a
-          href="http://localhost:8080/web/create-card.html">Solicitar tu tarjerta</a></button>
+          href="/web/create-card.html">Solicitar tu tarjerta</a></button>
 
     </main>
 

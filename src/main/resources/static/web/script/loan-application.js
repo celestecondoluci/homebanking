@@ -16,7 +16,7 @@ Vue.createApp({
 
     },
     created(){
-      axios.get('http://localhost:8080/api/loans')
+      axios.get('/api/loans')
       .then(datos => {
           this.loans = datos.data
           console.log(this.loans)
@@ -25,7 +25,7 @@ Vue.createApp({
           console.log(this.loanHipotecario)
           this.loanPersonal = this.loans.filter(loan => loan.id == 2)
         })
-        axios.get('http://localhost:8080/api/clients/current')
+        axios.get('/api/clients/current')
         .then(datos => {
           this.accounts = datos.data.accounts
             console.log(this.accounts)
@@ -48,7 +48,7 @@ methods:{
   },
   CerrarSesion() {
     axios.post('/api/logout')
-      .then(response => window.location.href = "http://localhost:8080/web/index.html")
+      .then(response => window.location.href = "/web/index.html")
   },
 
 },

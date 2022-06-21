@@ -31,8 +31,8 @@
                     <div class="offcanvas-bodyNav">
                         <a href="#">Cuentas</a>
                         <a href="#">Prestamos</a>
-                        <a href="http://localhost:8080/web/card.html">Tarjetas</a>
-                        <a href="http://localhost:8080/web/transfers.html">Transferencias</a>
+                        <a href="/web/card.html">Tarjetas</a>
+                        <a href="/web/transfers.html">Transferencias</a>
 
                         
                     </div>
@@ -172,7 +172,7 @@
                             <p> {{account.creationDate}}</p>
                             <h5>Tipo de cuenta</h5>
                             <p>{{account.type}}</p>
-                            <a class="links" v-bind:href="'http://localhost:8080/web/account.html?id='+ account.id">Ver
+                            <a class="links" v-bind:href="'/web/account.html?id='+ account.id">Ver
                                 Transacciones</a>
                             </div>
                         <div class="green-container">
@@ -324,7 +324,7 @@
                                     </div>
                                 </div>
                                 <button type="button" class="solicitarprestamo btn btn-outline-success"><a
-                                    href="http://localhost:8080/web/loan-application.html">Solicitar tu prestamo</a></button>
+                                    href="/web/loan-application.html">Solicitar tu prestamo</a></button>
                             </div>
 
                         </div>

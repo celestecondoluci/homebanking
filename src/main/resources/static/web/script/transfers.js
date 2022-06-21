@@ -17,7 +17,7 @@ Vue.createApp({
 
       }},
       created(){
-        axios.get('http://localhost:8080/api/clients/current')
+        axios.get('/api/clients/current')
         .then(datos => {
             this.accounts = datos.data.accounts
         })
@@ -34,7 +34,7 @@ Vue.createApp({
         },
         CerrarSesion() {
           axios.post('/api/logout')
-            .then(response => window.location.href = "http://localhost:8080/web/index.html")
+            .then(response => window.location.href = "/web/index.html")
         },
       },
       computed:{
