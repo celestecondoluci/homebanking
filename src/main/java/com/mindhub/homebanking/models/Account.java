@@ -24,11 +24,9 @@ public class Account {
     private LocalDateTime creationDate;
     private double balance;
     private boolean disable;
-
     private AccountType type;
 
     public Account() {}
-
 
     public Account(String number,LocalDateTime creationDate,double balance, Client cliente, boolean disable,AccountType type){
         this.number = number;

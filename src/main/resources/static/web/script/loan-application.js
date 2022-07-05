@@ -42,7 +42,8 @@ methods:{
     "amount":this.amountLoanSolicitado,
     "payments":this.paymentsLoanSolictado,
     "accountNumberDestination":this.accountDestinationLoanSolicitado})
-    .then(() => console.log('created'))
+    .then(response => window.location.reload(),
+    console.log('created'))
     .catch(error => 
       swal("No se pudo realizar el prestamo"))
   },

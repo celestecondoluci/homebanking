@@ -25,8 +25,8 @@ import static java.util.stream.Collectors.toList;
 
 @RequestMapping("/api")  //ejecutar metodos con solicitudes http (url)
 public class ClientController {
-    //@Autowired
-    //private ClientRepository clientRepository;
+    @Autowired
+    private ClientRepository clientRepository;
 
     @Autowired
     private AccountRepository accountRepository;
@@ -39,15 +39,12 @@ public class ClientController {
 
     @GetMapping("/clients")
     public List<ClientDTO> getClientsDTO() {
-        return clientService.getClientsDTO();
+        return clientRepository.findAll().stream().map(client -> new ClientDTO(client)).collect(toList());
     }
-
     @GetMapping("clients/{id}")
 
     public ClientDTO getClient(@PathVariable Long id) {
-
         return clientService.getClientDTOid(id);
-
     }
 
     @Autowired
@@ -72,9 +69,7 @@ public class ClientController {
 
 
         if (clientService.findByMail(email) != null) {
-
             return new ResponseEntity<>("Name already in use", HttpStatus.FORBIDDEN);
-
         }
 
 
@@ -92,11 +87,8 @@ public class ClientController {
     }
 
     @GetMapping("/clients/current")
-
     public ClientDTO getCurrentClient(Authentication authentication) {
-
         return new ClientDTO(clientService.getClientCurrent(authentication));
-
     }
 
 }

@@ -18,7 +18,6 @@ public class AccountDTO {
 
     private AccountType type;
 
-   //private Client cliente;
     private Set<TransactionsDTO> transactions;
     public AccountDTO (){}
     public AccountDTO (Account account){
@@ -26,7 +25,6 @@ public class AccountDTO {
         this.number = account.getNumber();
         this.creationDate = account.getCreationDate();
         this.balance = account.getBalance();
-        //this.cliente = account.getCliente();
         this.transactions = account.getTransactions().stream().map(transaction ->new TransactionsDTO(transaction)).collect(toSet());
         this.disable = account.isDisable();
         this.type = account.getType();
@@ -52,17 +50,13 @@ public class AccountDTO {
         return number;
     }
 
-
     public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
-
     public double getBalance() {
         return balance;
     }
-
-   // public Client getCliente() {return cliente;}
 
     public Set<TransactionsDTO> getTransactions() {
         return transactions;

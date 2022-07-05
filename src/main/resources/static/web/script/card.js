@@ -7,6 +7,7 @@ Vue.createApp({
         cardDebit:[],
         cardCredit:[],
         fecha:[],
+        cardsHabilitadas:[],
       }
     },
     created() {
@@ -15,6 +16,7 @@ Vue.createApp({
           this.card1 = datos.data.cards[0]
           this.card2 = datos.data.cards[1]
           this.cards = datos.data.cards
+          this.cardsHabilitadas = this.cards.filter(card => card.disable === false)
           this.cardDebit = this.cards.filter(card => card.type == 'DEBIT' && card.disable == false)
           this.cardCredit = this.cards.filter(card => card.type == 'CREDIT' && card.disable == false)
           // console.log(this.cardDebit)

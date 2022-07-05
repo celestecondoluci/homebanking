@@ -10,7 +10,6 @@ Vue.createApp({
         transactions:[],
         accountsOrdenadas:[],
         tipoCuenta:[],
-  
       }
     },
     created() {
