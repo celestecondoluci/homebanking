@@ -188,10 +188,11 @@
           </div>
         </div>
         <!-- tarjetas -->
-        <div v-else>
+        <div v-else  class="tarjetasHabilitadas">
           <!-- tarjetas de debito -->
-          <H5>Tus tarjetas de debito</H5>
-          <div v-for="card in cardDebit">
+          <div class="debito" >
+            <H5>Tus tarjetas de debito</H5>
+            <div v-for="card in cardDebit">
             <button class="btn btn-danger" v-on:click.prevent="deshabilitarTarjetas(card.id)"> Eliminar tarjeta</button>
             <div class="card" >
               <div class="card__front card__part"
@@ -230,12 +231,14 @@
               </div>
             </div>
           </div>
+          </div>
           <!-- tarjetas de credito -->
 
-          <h5>Tus tarjetas de credito</h5>
-          <div v-for="card in cardCredit">
+          <div class="credito">
+            <h5>Tus tarjetas de credito</h5>
+            <div class="divTarjetas"  v-for="card in cardCredit">
             <button class="btn btn-danger" v-on:click.prevent="deshabilitarTarjetas(card.id)"> Eliminar tarjeta</button>
-            <div class="card">
+            <div class="card" >
               <div class="card__front card__part"
               :class="{'gold': card.color === 'GOLD' , 'titanium': card.color === 'TITANIUM' , 'silver' : card.color === 'SILVER'}">
               <div v-if="card.color === 'GOLD'"><img class="card__front-logo card__logo" src="./img/simbolosVisa.png">
@@ -273,6 +276,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>   
       </section>
       <button type="button" class="solicitar btn btn-outline-success" v-show="cardsHabilitadas.length < 6"><a

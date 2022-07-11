@@ -401,6 +401,26 @@ footer {
     justify-content: space-between;
   }
 
+  .tarjetasHabilitadas{
+    
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8rem;
+  }
+
+  .credito{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
+  .debito{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+
   footer {
     width: 100%;
     position: absolute;

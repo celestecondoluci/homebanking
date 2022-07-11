@@ -218,9 +218,9 @@
                 </div>
 
                 <!-- tablas -->
-                <section class="seccionTablas d-flex justify-content-center flex-column ">
+                <section class="seccionTablas">
                     <!-- tabla ultimos movimientos -->
-                    <div class=" col-xs-8 col-lg-8">
+                    <div class=" col-xs-8 col-lg-4">
                         <div id="movimientos">
                             <img src="./img/metodo-de-pago.png">
                             <h4>Ultimos Movimientos</h4>
@@ -229,16 +229,25 @@
                             <button type="button" class="solicitar btn btn-outline-secondary"><a
                                 href="/web/transfers.html">Realiza una transferencia</a></button>
                             </h5>
-                        <table class="table table-hover table-striped" v-for="transaction in transactions.slice(0,4)"> 
-                            <tbody>
+                        <table class="movimientosTabla"> 
+                            <thead>
+                                <tr>
+                                    <th>Descripcion</th>
+                                    <th>Monto</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody  v-for="transaction in transactions.slice(0,4)">
                             <tr>
-                                <td>{{transaction.description}} ${{transaction.amount}}</td>
+                                <td>{{transaction.description}} </td>
+                                  <td> ${{transaction.amount}} </td> 
+                                  <td>{{transaction.type}}</td>
                             </tr>
                         </tbody>
                         </table>
                     </div>
                     <!-- tabla tus tarjetas -->
-                    <div class="col-xs-8 col-lg-8">
+                    <div class="col-xs-8 col-lg-4">
                         <div id="tusTarjetas">
                             <img src="./img/credit-cards (1).png">
                             <h4>Tus Tarjetas</h4>
@@ -248,14 +257,21 @@
                             <button type="button" class="solicitar btn btn-outline-secondary"><a
                                 href="/web/create-card.html">Solicitar tu tarjerta</a></button>
                             </h4>
-                        <table class="table table-striped" v-for="card in cards">
-                            <tbody>
+                        <table class="tarjetasTabla">
+                            <thead>
                                 <tr>
+                                    <th></th>
+                                    <th>Tipo</th>
+                                    <th>Color</th>
+                                </tr>
+                            </thead>
+                            <tbody v-for="card in cards">
                                     <td v-if="card.color === 'GOLD'"><img src="./img/american-express.png"></td>
                                     <td v-if="card.color === 'TITANIUM'"><img src="./img/visa.png"></td>
                                     <td v-if="card.color === 'SILVER'"><img src="./img/visa.png"></td>
-                                    <td>{{card.type}} {{card.color}}</td>
-                                </tr>
+                                   
+                                    <td>{{card.type}} </td>
+                                    <td>{{card.color}}</td>
                             </tbody>
                         </table>
                     </div>

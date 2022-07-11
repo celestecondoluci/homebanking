@@ -161,12 +161,13 @@ main {
     margin-top: 2%;
     margin-left: 2%;
 }
-
 .seccionTablas {
     margin-top: 2%;
     gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
 
 .solicitar {
     margin-left: 2%;
@@ -371,7 +372,23 @@ button a:hover{
         max-width: 100vw;
     }
 
+    .seccionTablas {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        gap: 10rem;
+        display: flex;
+        flex-direction: row;
 
+    }
+
+    .movimientosTabla {
+        width:30em;
+        margin-left: 0%;
+    }
+
+    .tarjetasTabla{
+        width: 25rem;
+    }
     .container-fluid{min-height: 94vh;}
 
     footer {
